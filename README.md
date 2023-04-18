@@ -1,22 +1,43 @@
 # So It's Shoujo
 
-This at it's core is a quiz page, but adding in the links and the first page I wanted to give it a bit more. I really enjoy anime and manga, and was watching some video essays about them and thought I could making a web page with a quiz of one of the joke games the video did. 
+At its core, this project is a quiz page, but I wanted to add more to it by incorporating links and a first page to give it a unique twist. Being a fan of anime and manga, I was inspired by video essays I watched and decided to create a web page with a quiz based on one of the joke games mentioned in the videos.
 
-I think that Shoujo does often get over looked or just talked about way more negatively than Shounen, but the site itself was just for fun. I was curious if I could and itching to do a react project from scratch with my own idea and this is what was made. Everyone should read and watch the anime/manga they enjoy but it's good to make sure you aren't putting a demographic into a tiny box of what it can be when it can be more.
+I believe that Shoujo anime and manga often get overlooked or discussed more negatively compared to Shounen, so I wanted to create a fun web page to shed light on this genre. This project also served as an opportunity for me to challenge myself and develop a React project from scratch with my own idea.
+
+I strongly believe that everyone should read and watch the anime/manga they enjoy, and it's important not to limit a demographic to a narrow stereotype. Through this project, I aimed to highlight the diversity and potential of Shoujo anime and manga beyond traditional perceptions.
 
 So maybe give Shoujo or just anime and manga a try.
+* Deployment: https://so-its-shoujo.vercel.app
 
-What was used:
-- React
-- React-Router
-- React-type-animation
-- Manga cover images found on google
-- font-awesome for icons
+## Requirements
+Install all the dependecies of this project by using the [package.json](./package.json). You will need to run the install command in your terminal after forking and cloning the project.
 
-- Deployment: https://so-its-shoujo.vercel.app
+```shell
+npm install
+```
 
-**Personal Highlights:**
-This was first idea I started as kind of all my own so in general just getting it to the point where I want to show it even to my friends or husband si pretty cool. It also really proved to me that I can do the things if I take the time and effort, but it mostly proved that I really enjoy the process of coding and the work that goes into finding solutions.
+## Built With
+* [React](https://react.dev)
+* [React-Router](https://reactrouter.com/en/main)
+* [React-type-animation](https://www.npmjs.com/package/react-type-animation)
+* [font-awesome](https://fontawesome.com)
+* Manga cover images found on google
 
-**Struggles in the Process:**
-This was the first time I used react-router so that was probably the biggest learning curve it was just a new setup to loo at and I had to dust off the media queries knowledge because it had been a little bit and I wasn't using a CSS framework so was figuring out the approach I wanted to change the responsiveness.
+### Local Development
+1. Download and install the LTS version of [Node.js](https://nodejs.org/en). In this project [nvm](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/) was used for the installing of a node version.
+
+
+2. Install the project requirements
+```shell
+npm install
+```
+
+3. Run the project
+```shell
+npm run
+```
+
+### License
+See the [LICENSE](./LICENSE) file for license rights and limitations (MIT).
+
+sponsiveness.
