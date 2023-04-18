@@ -1,5 +1,10 @@
 # So It's Shoujo
 
+![License](https://img.shields.io/github/license/bbland1/Quiz-App?style=plastic)
+![Version](https://img.shields.io/github/package-json/v/bbland1/Quiz-App?style=plastic)
+![State](https://img.shields.io/github/deployments/bbland1/Quiz-App/Production?style=plastic)
+![Language](https://img.shields.io/github/languages/top/bbland1/Quiz-App?style=plastic)
+
 At its core, this project is a quiz page, but I wanted to add more to it by incorporating links and a first page to give it a unique twist. Being a fan of anime and manga, I was inspired by video essays I watched and decided to create a web page with a quiz based on one of the joke games mentioned in the videos.
 
 I believe that Shoujo anime and manga often get overlooked or discussed more negatively compared to Shounen, so I wanted to create a fun web page to shed light on this genre. This project also served as an opportunity for me to challenge myself and develop a React project from scratch with my own idea.
@@ -36,6 +41,10 @@ npm install
 ```shell
 npm run
 ```
+* More information abouot the create-react-app set up and running can be found at [react-readme](./react-readme.md) or at [create-react-app](https://create-react-app.dev)
+
+### Deployment
+This project is deployed using [Vercel](https://vercel.com/docs) using their free tier. Having a [vercel.json](./vercel.json) within the root directory of your project will allow the project to run as neccart with react-router and vercel. It is important to check the documentation when deploying. Going through their quick start and connecting to the projects repo is the frist steps.
 
 ### License
 See the [LICENSE](./LICENSE) file for license rights and limitations (MIT).
