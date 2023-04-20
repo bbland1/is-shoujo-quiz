@@ -44,7 +44,7 @@ npm run
 * More information abouot the create-react-app set up and running can be found at [react-readme](./react-readme.md) or at [create-react-app](https://create-react-app.dev)
 
 ### Deployment
-This project is deployed using [Vercel](https://vercel.com/docs) using their free tier. Having a [vercel.json](./vercel.json) within the root directory of your project will allow the project to run as neccart with react-router and vercel. It is important to check the documentation when deploying. Going through their quick start and connecting to the projects repo is the frist steps.
+This project is deployed using [Vercel](https://vercel.com/docs) using their free tier. Having a [vercel.json](./vercel.json) within the root directory of your project will allow the project to run with react-router and vercel. It is important to check the documentation when deploying. Going through their quick start and connecting to the projects repo is the frist steps.
 
 ### License
 See the [LICENSE](./LICENSE) file for license rights and limitations (MIT).
