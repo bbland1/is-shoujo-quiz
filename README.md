@@ -17,10 +17,6 @@ So maybe give Shoujo or just anime and manga a try.
 ## Requirements
 Install all the dependecies of this project by using the [package.json](./package.json). You will need to run the install command in your terminal after forking and cloning the project.
 
-```shell
-npm install
-```
-
 ## Built With
 * [React](https://react.dev)
 * [React-Router](https://reactrouter.com/en/main)
