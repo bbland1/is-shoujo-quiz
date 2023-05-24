@@ -63,6 +63,7 @@ header h1 {
 
 .func-button button:hover {
   background-color: #f08782;
+  color:white;
 }
 
 .func-button button:active {
