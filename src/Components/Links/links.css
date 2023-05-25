@@ -3,6 +3,10 @@ span {
   color: #faa549ff;
 }
 
+iframe {
+  border: 0px;
+}
+
 .videos-resources {
   display: inline-flex;
   text-align: center;
