@@ -27,7 +27,7 @@ function Home() {
         <p>On this site there is a quiz that is solely there for fun and to help remind anyone that takes it that you literally can't judge a book by the cover and can you determine if based on the summary is the anime/manga a Shoujo. Check it out and maybe take notes on any that sound interesting and give them a try!</p>
 
         {/* Button has to be on the inside for the css styling of a button to actually apply but this allows the button to work lke a link would and not refresh the page based on react-router */}
-        <Link to="/quiz" className="func-button"><button>Head to the quiz!</button></Link>
+        <Link to="/quiz" className="func-button"><button data-testid="to-quiz-page">Head to the quiz!</button></Link>
       </main>
       <Footer />
     </div>

@@ -6,17 +6,30 @@ import '@testing-library/jest-dom'
 import App from '../App'
 import { BrowserRouter } from 'react-router-dom'
 
+
 test('full app rendering/navigating', async () => {
   render(<App />, { wrapper: BrowserRouter });
   const user = userEvent.setup();
-
+  
   // verify page content for default route
   expect(screen.getByText(/What's with the site?/)).toBeInTheDocument();
-
+  
   // verify page content for expected route after navigating
   await user.click(screen.getByText(/Links/));
   expect(screen.getByText(/Shojo Manga:/)).toBeInTheDocument();
-})
+
+  // send the test back to the home page because it is on the wrong page to check if the it heads to the quiz if not
+  await user.click(screen.getByText(/Home/));
+});
+
+test('head to quiz button takes to quiz', async () => {
+  render(<App />, { wrapper: BrowserRouter });
+  const user = userEvent.setup();
+
+  // I want to be able to change this test to not be linked to the 
+  await user.click(screen.getByTestId("to-quiz-page"));
+  expect(screen.getByTestId("quiz-start-page")).toBeInTheDocument();
+});
 
 // test('landing on a bad page', () => {
 //   const badRoute = '/quizes'

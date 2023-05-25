@@ -8,7 +8,7 @@ function Quiz() {
     <div>
       <header className="header-title">
         <NavBar />
-        <h1>Is it a Shoujo?</h1>
+        <h1 data-testid="quiz-start-page">Is it a Shoujo?</h1>
       </header>
       <main className="main-part">
         <QuizLogic />
