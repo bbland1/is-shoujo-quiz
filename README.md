@@ -1,9 +1,10 @@
 # So It's Shoujo
 
-![License](https://img.shields.io/github/license/bbland1/Quiz-App?style=plastic)
-![Version](https://img.shields.io/github/package-json/v/bbland1/Quiz-App?style=plastic)
-![State](https://img.shields.io/github/deployments/bbland1/Quiz-App/Production?style=plastic)
-![Language](https://img.shields.io/github/languages/top/bbland1/Quiz-App?style=plastic)
+![Production Env](https://img.shields.io/github/deployments/bbland1/is-shoujo-quiz/production?label=Production%20Env&style=plastic)
+![Preview Env](https://img.shields.io/github/deployments/bbland1/is-shoujo-quiz/preview?label=Preview%20Env&style=plastic)
+![License](https://img.shields.io/github/license/bbland1/is-shoujo-quiz?style=plastic)
+![Version](https://img.shields.io/github/package-json/v/bbland1/is-shoujo-quiz/main?label=Production&style=plastic)
+![Language](https://img.shields.io/github/languages/top/bbland1/is-shoujo-quiz?style=plastic)
 
 At its core, this project is a quiz page, but I wanted to add more to it by incorporating links and a first page to give it a unique twist. Being a fan of anime and manga, I was inspired by video essays I watched and decided to create a web page with a quiz based on one of the joke games mentioned in the videos.
 
