@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 function HomeTitle() {
@@ -10,7 +10,7 @@ function HomeTitle() {
         1000,
         "So it's for girls..?",
         1000,
-        "So just a romance story..?",
+        'So just a romance story..?',
         1000,
         "So it's Shoujo.",
         1000,
