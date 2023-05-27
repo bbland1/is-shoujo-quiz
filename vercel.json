@@ -1,6 +1,11 @@
 {
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  },
   "github": {
-    "enabled": false
+    "silent": false
   },
   "rewrites": [
     {"source": "/(.*)", "destination": "/"}
