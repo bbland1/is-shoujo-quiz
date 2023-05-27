@@ -1,7 +1,7 @@
-import React from "react";
-import Footer from "../Footer/Footer";
-import NavBar from "../NavBar/NavBar";
-import QuizLogic from "./QuizLogic";
+import React from 'react';
+import Footer from '../Footer/Footer';
+import NavBar from '../NavBar/NavBar';
+import QuizLogic from './QuizLogic';
 
 function Quiz() {
   return (
