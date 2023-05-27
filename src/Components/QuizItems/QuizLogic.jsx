@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import questions from "./QuizQuestions";
-import "./quiz.css"
+import React, { useState } from 'react';
+import questions from './QuizQuestions';
+import './quiz.css';
 
 function QuizLogic() {
   // State Properties of the quiz
@@ -12,7 +12,6 @@ function QuizLogic() {
 
   // when an answer button is clicked
   function handleAnswerClick(isCorrect) {
-
     // check if the users clicked answer returns true (the correct answer)
     if (isCorrect) {
       // adds the value of the question to the current state of the score
@@ -57,20 +56,19 @@ function QuizLogic() {
   }
 
   // the percentage of the score rounded to nearest whole number
-  let scorePercentage = Math.round((score / questions.length) * 100);
+  const scorePercentage = Math.round((score / questions.length) * 100);
 
   // string for the final score page
-  let finalScoreWords = ""
+  let finalScoreWords = '';
 
   // checking the value to show different messages
   if (scorePercentage > 75) {
-    finalScoreWords = "Seems you in fact know your Shoujo and demographics, good job!"
+    finalScoreWords = 'Seems you in fact know your Shoujo and demographics, good job!';
   } else if (scorePercentage > 50) {
-    finalScoreWords = "Maybe you've dabbled in Shoujo but you at least know your demographics."
+    finalScoreWords = "Maybe you've dabbled in Shoujo but you at least know your demographics.";
   } else {
-    finalScoreWords = "...soooooo Shoujo...try it."
+    finalScoreWords = '...soooooo Shoujo...try it.';
   }
-  
 
   return (
     // if true to show final score it will show thw final score card if false show the quiz
@@ -79,36 +77,63 @@ function QuizLogic() {
         showFinalScore ? (
           <div className="question-card func-button final-score">
             <h2>{finalScoreWords}</h2>
-            <h3>You got a {scorePercentage}%!</h3>
-            <h3>{score} out of {questions.length} correct</h3>
-            <button onClick={() => handleRestart()}>Restart</button>
+            <h3>
+              You got a
+              {scorePercentage}
+              %!
+            </h3>
+            <h3>
+              {score}
+              {' '}
+              out of
+              {' '}
+              {questions.length}
+              {' '}
+              correct
+            </h3>
+            <button type="button" onClick={() => handleRestart()}>Restart</button>
           </div>
         ) : (
           <div className="question-card func-button">
-            {currentQuestion !== 0 && <button onClick={() => goBack()} className="direction">Back</button>}
-            {currentQuestion !== 0 && <h3 className="direction">Score: {score}/{questions.length}</h3>}
-            <h4>Question {currentQuestion + 1} of {questions.length}</h4>
+            {currentQuestion !== 0 && <button type="button" onClick={() => goBack()} className="direction">Back</button>}
+            {currentQuestion !== 0 && (
+            <h3 className="direction">
+              Score:
+              {score}
+              /
+              {questions.length}
+            </h3>
+            )}
+            <h4>
+              Question
+              {currentQuestion + 1}
+              {' '}
+              of
+              {questions.length}
+            </h4>
             <div className="question-info">
-            <h2 className="question-text">{questions[currentQuestion].questionText}</h2>
+              <h2 className="question-text">{questions[currentQuestion].questionText}</h2>
               {questions[currentQuestion].question_img !== null && <img src={questions[currentQuestion].question_img} alt="" className="question-img" />}
               {questions[currentQuestion].question_description !== null && <p className="synopsis"><em>{questions[currentQuestion].question_description}</em></p>}
             </div>
             <div className="answer-text">
               <ul>
-                {questions[currentQuestion].answersOptions.map((answerOption) => {
-                  return (<button
+                {questions[currentQuestion].answersOptions.map((answerOption) => (
+                  <button
+                    type="button"
                     key={answerOption.id}
-                    onClick={() => handleAnswerClick(answerOption.isCorrect)}>
+                    onClick={() => handleAnswerClick(answerOption.isCorrect)}
+                  >
                     {answerOption.answerText}
-                  </button>)
-                })}
+                  </button>
+                ))}
               </ul>
             </div>
           </div>
         )
       }
     </div>
-  )
+  );
 }
 
 export default QuizLogic;
