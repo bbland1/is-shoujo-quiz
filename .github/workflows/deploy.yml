@@ -1,5 +1,5 @@
 name: Deploy So It's Shoujo
-on: [push, pull_request]
+on: [push]
 jobs:
   eslint:
     name: Lint Code
@@ -62,7 +62,7 @@ jobs:
           id: deploy-vercel-production
           if: github.event_name == 'push' && github.ref == 'refs/heads/main'
           with:
-            vercel-token: ${{ secrets.VERCEL_TOKEN }}
+            vercel-token:
             vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
             vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_TL_ENGINE }}
             vercel-args: '--prod'
