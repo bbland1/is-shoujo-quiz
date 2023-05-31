@@ -44,7 +44,7 @@ jobs:
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
       - id: get-comment-body
         run: |
-          body="$(cat comment-body.txt)"
+          body="$(cat deployment.txt)"
           delimiter="$(openssl rand -hex 8)"
           echo "body<<$delimiter" >> $GITHUB_OUTPUT
           echo "$body" >> $GITHUB_OUTPUT
