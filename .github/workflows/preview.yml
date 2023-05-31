@@ -44,14 +44,13 @@ jobs:
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
       - name: Get url
         run: deployment_url = `cat deployment.txt`
-        run: echo $deployment_url
       - name: Comment Preview Deployment
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
             The current changes were successfully deployed to the preview enviroment.
 
-            The preview enviroment for this deployment can be found at: ${deployment.txt}.
+            The preview enviroment for this deployment can be found at: $deployment_url.
 
             Please check if the project is running as expect with your changes.
           reactions:
