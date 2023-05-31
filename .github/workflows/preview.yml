@@ -44,7 +44,7 @@ jobs:
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
       - id: get-comment-body
         run: |
-          body="$(cat deplotment.txt)"
+          body="$(cat deployment.txt)"
           echo "$body" >> $GITHUB_OUTPUT
       - name: Comment Preview Deployment
         uses: peter-evans/commit-comment@v2
