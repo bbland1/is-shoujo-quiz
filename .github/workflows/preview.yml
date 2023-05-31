@@ -42,17 +42,19 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
+      - id: get-comment-body
+        run: |
+          body="$(cat deplotment.txt)"
+          echo "$body" >> $GITHUB_OUTPUT
       - name: Comment Preview Deployment
-        uses: thollander/actions-comment-pull-request@v2
+        uses: peter-evans/commit-comment@v2
         with:
-          message: |
+          body: |
             The current changes were successfully deployed to the preview enviroment.
 
-            The preview enviroment for this deployment can be found at: $deployment.txt.
+            The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
 
             Please check if the project is running as expect with your changes.
-          reactions:
-            hooray, eyes, heart
 
 
 
