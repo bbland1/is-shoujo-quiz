@@ -59,5 +59,8 @@ jobs:
             Please check if the project is running as expect with your changes.
       - name: Run Tests Against Vercel
         env: 
-          PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.URL }}
+          PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.body }}
         run: npm run ci:test
+    environment: 
+      name: Preview
+      url: ${{steps.get-comment-body.outputs.body }}
