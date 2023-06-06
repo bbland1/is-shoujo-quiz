@@ -45,7 +45,7 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         id: preview-deploy
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deplotment.txt
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
       - id: get-comment-body
         run: |
           body="$(cat deployment.txt)"
