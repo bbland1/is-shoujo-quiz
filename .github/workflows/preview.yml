@@ -74,7 +74,6 @@ jobs:
           comment_tag: execution
           reactions:
             hooray, eyes, heart
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.preview-deploy.outputs.URL }}
