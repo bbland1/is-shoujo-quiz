@@ -44,7 +44,6 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        id: preview-deploy
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
       - id: get-comment-body
         run: |
@@ -58,9 +57,7 @@ jobs:
         with:
           body: |
             The current changes were successfully deployed to the preview enviroment.
-
-            The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.URL }}.
-
+            The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
             Please check if the project is running as expect with your changes.
       - name: Run Tests Against Vercel
         env: 
