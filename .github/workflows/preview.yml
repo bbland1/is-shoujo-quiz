@@ -4,10 +4,10 @@ on:
   #   branches-ignore:
   #     - main
   pull_request_target:
-    types:
-      [opened, edited, reopened]
     branches:
     - main
+    types:
+      [opened, edited, reopened]
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
