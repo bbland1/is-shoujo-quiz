@@ -1,6 +1,6 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
-  pull_request:
+  push:
     branches-ignore:
       - main
 env:
@@ -37,6 +37,8 @@ jobs:
     needs: eslint
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.get-branch.outputs.branch }}
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
       - name: Pull Vercel Environment Information
@@ -53,6 +55,12 @@ jobs:
           echo "body<<$delimiter" >> $GITHUB_OUTPUT
           echo "$body" >> $GITHUB_OUTPUT
           echo "$delimiter" >> $GITHUB_OUTPUT
+      - id: 'get-branch'
+        run: echo ::set-output name=branch::$(gh pr view $PR_NO --repo $REPO --json headRefName --jq '.headRefName')
+        env:
+          REPO: ${{ github.repository }}
+          PR_NO: ${{ github.event.issue.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Comment Preview Deployment
       #   uses: peter-evans/commit-comment@v2
       #   with:
@@ -74,6 +82,7 @@ jobs:
           comment_tag: execution
           reactions:
             hooray, eyes, heart
+          # pr_number: ${{ github.context.}}
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.preview-deploy.outputs.URL }}
