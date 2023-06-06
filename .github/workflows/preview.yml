@@ -1,13 +1,8 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
-  # push:
-  #   branches-ignore:
-  #     - main
-  pull_request_target:
-    branches:
-    - main
-    types:
-      [opened, edited, reopened]
+  push:
+    branches-ignore:
+      - main
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -62,14 +57,6 @@ jobs:
             The current changes were successfully deployed to the preview enviroment.
             The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
             Please check if the project is running as expect with your changes.
-      - name: Comment preview Deployment 3
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          message: |
-            Please check out the deployment to confirm it works as you expected.
-          comment_tag: execution
-          reactions:
-            hooray, eyes, heart
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.body }}
