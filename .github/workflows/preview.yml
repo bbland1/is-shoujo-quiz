@@ -2,8 +2,11 @@ name: GitHub Actions Vercel Preview Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-on:
+on: 
   push:
+    branches-ignore:
+      - main
+  pull_request:
     branches-ignore:
       - main
 jobs:
@@ -45,6 +48,7 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
+        run: echo ${{ github.event.issue.number }}
       - id: get-comment-body
         run: |
           body="$(cat deployment.txt)"
