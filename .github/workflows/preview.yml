@@ -32,6 +32,8 @@ jobs:
 
   Deploy-Preview:
     runs-on: ubuntu-latest
+    permissions: 
+      pull-requests: write 
     steps:
       - uses: actions/checkout@v3
       - name: Install Vercel CLI
@@ -68,12 +70,9 @@ jobs:
 
             Please check if the project is running as expect with your changes.
           comment_tag: Preview Deployment
-          mode: 
           reactions:
             hooray, eyes, heart
-
-
-
-    
       - name: Run Tests Against Vercel
+        env: 
+          PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.body }}
         run: npm run ci:test
