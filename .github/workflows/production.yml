@@ -53,7 +53,7 @@ jobs:
       #     echo "body<<$delimiter" >> $GITHUB_OUTPUT
       #     echo "$body" >> $GITHUB_OUTPUT
       #     echo "$delimiter" >> $GITHUB_OUTPUT
-      - name: Comment Preview Deployment 2
+      - name: Comment Production Deployment
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |

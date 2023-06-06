@@ -61,3 +61,6 @@ jobs:
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.URL }}
         run: npm run ci:test
+    environment: 
+      name: preview
+      url: ${{steps.get-comment-body.outputs.URL }}
