@@ -17,9 +17,9 @@ jobs:
 
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -34,6 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: 
       pull-requests: write 
+    needs: eslint
     steps:
       - uses: actions/checkout@v3
       - name: Install Vercel CLI
@@ -72,6 +73,8 @@ jobs:
           comment_tag: Preview Deployment
           reactions:
             hooray, eyes, heart
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pr_number: ${{ github.event.issue.number }}
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.body }}
