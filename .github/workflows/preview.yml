@@ -3,7 +3,7 @@ on:
   pull_request:
     types:
       [opened, edited, reopened]
-    branches-ignore:
+    branches:
       - main
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
