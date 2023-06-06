@@ -29,6 +29,12 @@ function Footer() {
             Hosted with Vercel
             <FontAwesomeIcon icon={faCaretUp} />
           </a>
+          <p>
+            &copy; 2022-
+            {new Date().getFullYear()}
+            {' '}
+            bbland1
+          </p>
         </p>
       </div>
     </footer>

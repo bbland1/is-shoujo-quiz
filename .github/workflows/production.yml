@@ -58,5 +58,6 @@ jobs:
             The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
 
             Please check if the project is running as expect with your changes.
+          comment_tag: Production Deployment
           reactions:
             hooray, eyes, heart
