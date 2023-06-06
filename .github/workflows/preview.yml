@@ -37,8 +37,6 @@ jobs:
     needs: eslint
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ steps.get-branch.outputs.branch }}
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
       - name: Pull Vercel Environment Information
@@ -55,34 +53,27 @@ jobs:
       #     echo "body<<$delimiter" >> $GITHUB_OUTPUT
       #     echo "$body" >> $GITHUB_OUTPUT
       #     echo "$delimiter" >> $GITHUB_OUTPUT
-      - id: 'get-branch'
-        run: echo ::set-output name=branch::$(gh pr view $PR_NO --repo $REPO --json headRefName --jq '.headRefName')
-        env:
-          REPO: ${{ github.repository }}
-          PR_NO: ${{ github.event.issue.number }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Comment Preview Deployment
-      #   uses: peter-evans/commit-comment@v2
-      #   with:
-      #     body: |
-      #       The current changes were successfully deployed to the preview enviroment.
-
-      #       The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
-
-      #       Please check if the project is running as expect with your changes.
       - name: Comment Preview Deployment
-        uses: thollander/actions-comment-pull-request@v2
+        uses: peter-evans/commit-comment@v2
         with:
-          message: |
+          body: |
             The current changes were successfully deployed to the preview enviroment.
 
             The preview enviroment for this deployment can be found at: ${{ steps.preview-deploy.outputs.URL }}.
 
             Please check if the project is running as expect with your changes.
-          comment_tag: execution
+      - name: Comment Preview Deployment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            The current changes were successfully deployed to the preview enviroment.
+
+            The preview enviroment for this deployment can be found at: ${{ steps.preview-deploy.outputs.URL }}.
+
+            Please check if the project is running as expect with your changes.
           reactions:
             hooray, eyes, heart
-          # pr_number: ${{ github.context.}}
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.preview-deploy.outputs.URL }}
