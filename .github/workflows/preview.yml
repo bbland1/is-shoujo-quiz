@@ -62,18 +62,6 @@ jobs:
             The preview enviroment for this deployment can be found at: ${{ steps.preview-deploy.outputs.URL }}.
 
             Please check if the project is running as expect with your changes.
-      - name: Comment Preview Deployment
-        uses: peter-evans/create-or-update-comment@v3
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            The current changes were successfully deployed to the preview enviroment.
-
-            The preview enviroment for this deployment can be found at: ${{ steps.preview-deploy.outputs.URL }}.
-
-            Please check if the project is running as expect with your changes.
-          reactions:
-            hooray, eyes, heart
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.preview-deploy.outputs.URL }}
