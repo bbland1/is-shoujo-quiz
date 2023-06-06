@@ -1,11 +1,11 @@
 name: GitHub Actions Vercel Preview Deployment
+on: 
+  pull_request:
+    branches-ignore:
+      - main
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-on: 
-  push:
-    branches-ignore:
-      - main
 jobs:
   eslint:
     name: Lint Code
@@ -44,9 +44,8 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
-      - name: get pr
-        run: echo ${{ github.event.issue.number }}
+        id: preview-deploy
+        run: echo "URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} | tail -n 1)" >> $GITHUB_OUTPUT
       - id: get-comment-body
         run: |
           body="$(cat deployment.txt)"
@@ -69,15 +68,14 @@ jobs:
           message: |
             The current changes were successfully deployed to the preview enviroment.
 
-            The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
+            The preview enviroment for this deployment can be found at: ${{ steps.preview-deploy.outputs.URL }}.
 
             Please check if the project is running as expect with your changes.
-          comment_tag: Preview Deployment
+          comment_tag: execution
           reactions:
             hooray, eyes, heart
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pr_number: ${{ github.event.issue.number }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests Against Vercel
         env: 
-          PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.body }}
+          PREVIEW_DEPLOYMENT: ${{steps.preview-deploy.outputs.URL }}
         run: npm run ci:test
