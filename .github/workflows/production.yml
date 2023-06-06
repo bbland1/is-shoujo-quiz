@@ -45,23 +45,24 @@ jobs:
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         id: production-deploy
-        run: echo "URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} | tail -n 1)" >> $GITHUB_OUTPUT
-      # - id: get-comment-body
-      #   run: |
-      #     body="$(cat deployment.txt)"
-      #     delimiter="$(openssl rand -hex 8)"
-      #     echo "body<<$delimiter" >> $GITHUB_OUTPUT
-      #     echo "$body" >> $GITHUB_OUTPUT
-      #     echo "$delimiter" >> $GITHUB_OUTPUT
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > deployment.txt
+      - id: get-comment-body
+        run: |
+          body="$(cat deployment.txt)"
+          delimiter="$(openssl rand -hex 8)"
+          echo "body<<$delimiter" >> $GITHUB_OUTPUT
+          echo "$body" >> $GITHUB_OUTPUT
+          echo "$delimiter" >> $GITHUB_OUTPUT
       - name: Comment Production Deployment
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
             The current changes were successfully deployed to the production enviroment.
-
-            The production enviroment for this deployment can be found at: ${{ steps.production-deploy.outputs.URL }}.
-
+            The production enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
             Please check if the project is running as expect with your changes.
           comment_tag: execution
           reactions:
             hooray, eyes, heart
+    environment: 
+      name: Production
+      url: ${{ steps.get-comment-body.outputs.body }}
