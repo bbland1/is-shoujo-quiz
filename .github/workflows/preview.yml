@@ -59,6 +59,18 @@ jobs:
             The current changes were successfully deployed to the preview enviroment.
             The preview enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
             Please check if the project is running as expect with your changes.
+      - name: Comment Preview Deployment 2
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            The current changes were successfully deployed to the production enviroment.
+
+            The production enviroment for this deployment can be found at: ${{ steps.get-comment-body.outputs.body }}.
+
+            Please check if the project is running as expect with your changes.
+          comment_tag: execution
+          reactions:
+            hooray, eyes, heart
       - name: Run Tests Against Vercel
         env: 
           PREVIEW_DEPLOYMENT: ${{steps.get-comment-body.outputs.URL }}
