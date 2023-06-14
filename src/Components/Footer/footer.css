@@ -1,11 +1,11 @@
 footer {
   bottom: 0;
-  height: 2.70rem;
+  height: 3.75rem;
   width: 100%;
   background-color: #faa549ff;;
-  margin-top: 25px;
+  margin-top: 10px;
   color: white;
-  padding: 25px;
+  padding: 10px 25px;
   text-align: center;
 }
 
@@ -19,7 +19,7 @@ footer a:hover{
 }
 
 footer p, h4 {
-  padding: 5px;
+  padding-top: 5px;
   margin: 0 auto;
   font-size: 0.65rem;
 }
