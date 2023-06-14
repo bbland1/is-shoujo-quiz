@@ -4,7 +4,7 @@ on:
     branches:
       - main
     types:
-      [opened, edited, reopened]
+      [opened, reopened]
   push:
     branches-ignore:
       - main
