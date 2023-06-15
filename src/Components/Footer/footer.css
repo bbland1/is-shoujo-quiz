@@ -1,7 +1,7 @@
 footer {
   bottom: 0;
-  height: 3.75rem;
   width: 100%;
+  box-sizing: border-box;
   background-color: #faa549ff;;
   margin-top: 10px;
   color: white;
