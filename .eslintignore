@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.prettierrc
+env.d.ts
+**.config.js
+.gitignore
+.eslintrc
+.eslintignore
+**.test.jsx
