@@ -22,7 +22,6 @@ describe('full app rendering/navigating', async () => {
   test('links page renders correctly', async () => {
     await userEvent.click(screen.getByTestId('to-links-page'));
 
-
     expect(screen.getByText(/Shojo Manga:/)).toBeInTheDocument();
   });
 

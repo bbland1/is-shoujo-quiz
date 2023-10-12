@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Components/HomePage/HomePage';

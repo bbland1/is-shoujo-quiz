@@ -2,8 +2,8 @@ node_modules/
 dist/
 .prettierrc
 env.d.ts
-**.config.js
+**.config.ts
 .gitignore
 .eslintrc
 .eslintignore
-**.test.jsx
+**.test.tsx
