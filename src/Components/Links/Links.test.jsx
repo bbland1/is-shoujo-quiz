@@ -2,8 +2,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Links from '../Components/Links/LinksPage';
-import '@testing-library/jest-dom';
+import Links from './LinksPage';
+// import '@testing-library/jest-dom';
 
 // testing for the links at the bottom of the page
 test('Anilist Link', () => {

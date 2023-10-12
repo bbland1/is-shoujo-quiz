@@ -13,6 +13,7 @@ function NavBar() {
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? activeNav : undefined)}
+            data-testid="Home-Link"
           >
             Home
           </NavLink>
@@ -21,6 +22,7 @@ function NavBar() {
           <NavLink
             to="/quiz"
             className={({ isActive }) => (isActive ? activeNav : undefined)}
+            data-testid="to-quiz-page-nav"
           >
             Quiz
           </NavLink>
@@ -29,6 +31,7 @@ function NavBar() {
           <NavLink
             to="/links"
             className={({ isActive }) => (isActive ? activeNav : undefined)}
+            data-testid="to-links-page"
           >
             Links
           </NavLink>
