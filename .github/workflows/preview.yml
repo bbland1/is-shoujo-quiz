@@ -1,10 +1,10 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
-  pull_request:
-    types:
-      [opened, synchronize, ready_for_review]
-    branches:
-      - development
+  # pull_request:
+  #   types:
+  #     [opened, ready_for_review]
+  #   branches:
+  #     - development
   push:
     branches-ignore:
       - main, development
