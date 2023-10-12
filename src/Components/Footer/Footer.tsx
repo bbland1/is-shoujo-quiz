@@ -14,17 +14,13 @@ function Footer() {
           <a href="https://github.com/bbland1/Quiz-App/#readme">
             Open Source Code
             <FontAwesomeIcon icon={faGithub} />
-          </a>
-          {' '}
-          |
-          {' '}
+          </a>{' '}
+          |{' '}
           <a href="https://www.linkedin.com/in/bbland1/">
             Made by: bbland1
             <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          {' '}
-          |
-          {' '}
+          </a>{' '}
+          |{' '}
           <a href="https://vercel.com">
             Hosted with Vercel
             <FontAwesomeIcon icon={faCaretUp} />
@@ -32,9 +28,7 @@ function Footer() {
         </p>
         <p>
           &copy; 2022-
-          {new Date().getFullYear()}
-          {' '}
-          bbland1
+          {new Date().getFullYear()} bbland1
         </p>
       </div>
     </footer>

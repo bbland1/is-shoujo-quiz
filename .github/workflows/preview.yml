@@ -1,10 +1,16 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
+  # pull_request:
+  #   types:
+  #     [opened, ready_for_review]
+  #   branches:
+  #     - development
   push:
-    branches:
+    branches-ignore:
+      - main
       - development
-    # branches-ignore:
-    #   - main
+
+    
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

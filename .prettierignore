@@ -1,6 +1,14 @@
 node_modules/
 dist/
 .prettierrc
+.eslintrc
+public/
+vite-env.d.ts
+tsconfig.json
+tsconfig.node.json
+vercel.json
+**.config.ts
+.github/
 
 # Ignore artifacts:
 build
