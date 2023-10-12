@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from '@vitejs/plugin-react';
 import svgrPlugin from "vite-plugin-svgr";
@@ -21,11 +22,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    reporters: ['default'],
     coverage: {
-      reporter: ['text', 'json'],
+      provider: "v8",
+      reporter: ['text', 'json', 'html'],
     },
-    setupFiles: ['./src/test/setup.js'],
+    setupFiles: './src/test/setup.ts',
     css: true
   },
 });

@@ -25,21 +25,21 @@ function Links() {
         <div className="videos-resources">
           <div className="videos">
             <h3>What is Shoujo Manga?</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/169rKJBBc98" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen target="_blank" />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/169rKJBBc98" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
           <div className="videos">
             <h3>
               [EP12] Shojo Manga: The Power and Influence of Girls&apos; Comics
             </h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/1mgCCtZ3iaA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen target="_blank" />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1mgCCtZ3iaA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
           <div className="videos">
             <h3>Manga Art Theory: Undefined and Overlooked?</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/YTHjJaAed8Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen target="_blank" />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YTHjJaAed8Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
           <div className="videos">
             <h3>Anime Art Theory: SUPERFLAT Explained!</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kaNid-wiGbA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen target="_blank" />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kaNid-wiGbA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
         </div>
         <div>

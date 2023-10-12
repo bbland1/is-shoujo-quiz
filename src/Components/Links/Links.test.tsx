@@ -16,7 +16,7 @@ test('Anilist Link', () => {
 test('Anilist Correct Url', () => {
   render(<Links />, { wrapper: BrowserRouter });
 
-  const anilistLink = screen.getByTestId('Anilist-Link');
+  const anilistLink: HTMLAnchorElement = screen.getByTestId('Anilist-Link');
   expect(anilistLink.href).toContain('https://anilist.co/');
 });
 
@@ -30,6 +30,6 @@ test('My Anime List Link', () => {
 test('My Anime List Correct Url', () => {
   render(<Links />, { wrapper: BrowserRouter });
 
-  const myAnimeListLink = screen.getByTestId('MAL-Link');
+  const myAnimeListLink: HTMLAnchorElement = screen.getByTestId('MAL-Link');
   expect(myAnimeListLink.href).toContain('https://myanimelist.net/');
 });

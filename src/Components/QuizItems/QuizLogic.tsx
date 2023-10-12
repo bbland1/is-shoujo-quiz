@@ -11,7 +11,7 @@ function QuizLogic() {
   // giving functionality
 
   // when an answer button is clicked
-  function handleAnswerClick(isCorrect) {
+  function handleAnswerClick(isCorrect: boolean) {
     // check if the users clicked answer returns true (the correct answer)
     if (isCorrect) {
       // adds the value of the question to the current state of the score
