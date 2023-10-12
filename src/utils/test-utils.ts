@@ -6,7 +6,6 @@ afterEach(() => {
   cleanup();
 });
 
-
 function customRender(ui: React.ReactElement, options = {}) {
   return render(ui, {
     // wrap provider(s) here if needed

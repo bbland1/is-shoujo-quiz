@@ -2,7 +2,7 @@ footer {
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
-  background-color: #faa549ff;;
+  background-color: #faa549ff;
   margin-top: 10px;
   color: white;
   padding: 10px 25px;
@@ -14,11 +14,12 @@ footer a {
   font-size: 0.75rem;
 }
 
-footer a:hover{
-  color: #f08782
+footer a:hover {
+  color: #f08782;
 }
 
-footer p, h4 {
+footer p,
+h4 {
   padding-top: 5px;
   margin: 0 auto;
   font-size: 0.65rem;

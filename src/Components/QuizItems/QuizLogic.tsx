@@ -73,65 +73,60 @@ function QuizLogic() {
   return (
     // if true to show final score it will show thw final score card if false show the quiz
     <div>
-      {
-        showFinalScore ? (
-          <div className="question-card func-button final-score">
-            <h2>{finalScoreWords}</h2>
-            <h3>
-              You got a
-              {scorePercentage}
-              %!
-            </h3>
-            <h3>
-              {score}
-              {' '}
-              out of
-              {' '}
-              {questions.length}
-              {' '}
-              correct
-            </h3>
-            <button type="button" onClick={() => handleRestart()}>Restart</button>
-          </div>
-        ) : (
-          <div className="question-card func-button">
-            {currentQuestion !== 0 && <button type="button" onClick={() => goBack()} className="direction">Back</button>}
-            {currentQuestion !== 0 && (
+      {showFinalScore ? (
+        <div className="question-card func-button final-score">
+          <h2>{finalScoreWords}</h2>
+          <h3>
+            You got a{scorePercentage}
+            %!
+          </h3>
+          <h3>
+            {score} out of {questions.length} correct
+          </h3>
+          <button type="button" onClick={() => handleRestart()}>
+            Restart
+          </button>
+        </div>
+      ) : (
+        <div className="question-card func-button">
+          {currentQuestion !== 0 && (
+            <button type="button" onClick={() => goBack()} className="direction">
+              Back
+            </button>
+          )}
+          {currentQuestion !== 0 && (
             <h3 className="direction">
               Score:
-              {score}
-              /
-              {questions.length}
+              {score}/{questions.length}
             </h3>
+          )}
+          <h4>
+            Question
+            {currentQuestion + 1} of
+            {questions.length}
+          </h4>
+          <div className="question-info">
+            <h2 className="question-text">{questions[currentQuestion].questionText}</h2>
+            {questions[currentQuestion].question_img !== null && (
+              <img src={questions[currentQuestion].question_img} alt="" className="question-img" />
             )}
-            <h4>
-              Question
-              {currentQuestion + 1}
-              {' '}
-              of
-              {questions.length}
-            </h4>
-            <div className="question-info">
-              <h2 className="question-text">{questions[currentQuestion].questionText}</h2>
-              {questions[currentQuestion].question_img !== null && <img src={questions[currentQuestion].question_img} alt="" className="question-img" />}
-              {questions[currentQuestion].question_description !== null && <p className="synopsis"><em>{questions[currentQuestion].question_description}</em></p>}
-            </div>
-            <div className="answer-text">
-              <ul>
-                {questions[currentQuestion].answersOptions.map((answerOption) => (
-                  <button
-                    type="button"
-                    key={answerOption.id}
-                    onClick={() => handleAnswerClick(answerOption.isCorrect)}
-                  >
-                    {answerOption.answerText}
-                  </button>
-                ))}
-              </ul>
-            </div>
+            {questions[currentQuestion].question_description !== null && (
+              <p className="synopsis">
+                <em>{questions[currentQuestion].question_description}</em>
+              </p>
+            )}
           </div>
-        )
-      }
+          <div className="answer-text">
+            <ul>
+              {questions[currentQuestion].answersOptions.map((answerOption) => (
+                <button type="button" key={answerOption.id} onClick={() => handleAnswerClick(answerOption.isCorrect)}>
+                  {answerOption.answerText}
+                </button>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

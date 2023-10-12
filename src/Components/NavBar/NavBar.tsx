@@ -10,11 +10,7 @@ function NavBar() {
     <nav>
       <ul>
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? activeNav : undefined)}
-            data-testid="Home-Link"
-          >
+          <NavLink to="/" className={({ isActive }) => (isActive ? activeNav : undefined)} data-testid="Home-Link">
             Home
           </NavLink>
         </li>
@@ -22,8 +18,7 @@ function NavBar() {
           <NavLink
             to="/quiz"
             className={({ isActive }) => (isActive ? activeNav : undefined)}
-            data-testid="to-quiz-page-nav"
-          >
+            data-testid="to-quiz-page-nav">
             Quiz
           </NavLink>
         </li>
@@ -31,8 +26,7 @@ function NavBar() {
           <NavLink
             to="/links"
             className={({ isActive }) => (isActive ? activeNav : undefined)}
-            data-testid="to-links-page"
-          >
+            data-testid="to-links-page">
             Links
           </NavLink>
         </li>
