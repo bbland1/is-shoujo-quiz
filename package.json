@@ -38,7 +38,7 @@
     "test": "vitest --ui",
     "serve": "vite preview",
     "lint": "eslint . --ext .jsx --ext .js",
-    "ci:test": "npm run test -- --ci --coverage",
+    "ci:test": "vitest",
     "coverage": "vitest run --coverage"
   },
   "eslintConfig": {
