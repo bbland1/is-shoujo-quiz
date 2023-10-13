@@ -1,6 +1,8 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
   push:
+    branches:
+      - development
     branches-ignore:
       - main
 
@@ -31,7 +33,7 @@ jobs:
         run: npm run lint
       - name: Run Test locally
         run: npm run ci:test
-        
+
   cleaup:
     runs-on: ubuntu-latest
     steps:
