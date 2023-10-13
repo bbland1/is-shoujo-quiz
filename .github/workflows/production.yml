@@ -29,14 +29,14 @@ jobs:
         run: npm run lint
       - name: Run Test locally
         run: npm run ci:test
-
+        
   cleaup:
     runs-on: ubuntu-latest
     steps:
       - uses: strumwolf/delete-deployment-environment@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment: production
+          environment: preview
           onlyRemoveDeployments: true
 
   Deploy-Production:
