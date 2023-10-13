@@ -1,14 +1,8 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
-  pull_request:
-    types:
-      [closed]
-    branches:
-      - development
   push:
     branches-ignore:
       - main
-      - development
 
     
 env:
