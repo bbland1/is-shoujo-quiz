@@ -1,14 +1,8 @@
 name: GitHub Actions Vercel Preview Deployment
 on: 
-  # pull_request:
-  #   types:
-  #     [opened, ready_for_review]
-  #   branches:
-  #     - development
   push:
     branches-ignore:
       - main
-      - development
 
     
 env:
@@ -37,6 +31,15 @@ jobs:
         run: npm run lint
       - name: Run Test locally
         run: npm run ci:test
+        
+  cleaup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: preview
+          onlyRemoveDeployments: true
 
   Deploy-Preview:
     runs-on: ubuntu-latest
