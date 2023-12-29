@@ -1,7 +1,5 @@
 import React from 'react';
-import { createNavLink } from './NavBarHelper';
-// import { NavLink } from 'react-router-dom';
-// import styles from './navbar.module.css';
+import createNavLink from './NavBarHelper';
 
 type NavPath = {
   name: string,
@@ -11,12 +9,12 @@ type NavPath = {
 const NAV_PATHS: NavPath[] = [
   { name: 'Home', path: '/', testid: 'Home-Link' },
   { name: 'Quiz', path: '/quiz', testid: 'to-quiz-page-nav' },
-  { name: 'Links', path: '/links', testid: 'to-links-page' },
   { name: 'Suggestions', path: '/suggestions', testid: 'to-suggestions-page' },
-  { name: 'Admin', path: '/admin', testid: 'to-admin-page'}
+  { name: 'Links', path: '/links', testid: 'to-links-page' },
+  { name: 'Control', path: '/control', testid: 'to-control-page'}
 ];
 
-function NavBar() {
+export default function NavBar() {
   return (
     <nav>
       <ul>
@@ -28,5 +26,3 @@ function NavBar() {
     </nav>
   );
 }
-
-export default NavBar;
