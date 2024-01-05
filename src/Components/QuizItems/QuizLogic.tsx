@@ -77,7 +77,7 @@ function QuizLogic() {
         <div className="question-card func-button final-score">
           <h2>{finalScoreWords}</h2>
           <h3>
-            You got a{scorePercentage}
+            You got a {scorePercentage}
             %!
           </h3>
           <h3>
