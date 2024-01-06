@@ -1,38 +1,28 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './navbar.css';
+import createNavLink from './NavBarHelper';
 
-function NavBar() {
-  // the value of the class name that the is active will add if the link had been clicked on and the site is on that page
-  const activeNav = 'active-nav';
+type NavPath = {
+  name: string,
+  path: string;
+  testid: string
+};
+const NAV_PATHS: NavPath[] = [
+  { name: 'Home', path: '/', testid: 'Home-Link' },
+  { name: 'Quiz', path: '/quiz', testid: 'to-quiz-page-nav' },
+  { name: 'Suggestions', path: '/suggestions', testid: 'to-suggestions-page' },
+  { name: 'Links', path: '/links', testid: 'to-links-page' },
+  { name: 'Control', path: '/control', testid: 'to-control-page'}
+];
 
+export default function NavBar() {
   return (
     <nav>
       <ul>
-        <li>
-          <NavLink to="/" className={({ isActive }) => (isActive ? activeNav : undefined)} data-testid="Home-Link">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/quiz"
-            className={({ isActive }) => (isActive ? activeNav : undefined)}
-            data-testid="to-quiz-page-nav">
-            Quiz
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/links"
-            className={({ isActive }) => (isActive ? activeNav : undefined)}
-            data-testid="to-links-page">
-            Links
-          </NavLink>
-        </li>
+        {NAV_PATHS.map((navPath) => (
+          <li key={navPath.name}>
+            {createNavLink(navPath.path, navPath.name, navPath.testid)}
+          </li>))}
       </ul>
     </nav>
   );
 }
-
-export default NavBar;

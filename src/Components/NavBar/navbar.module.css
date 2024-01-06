@@ -22,7 +22,7 @@ nav li a:hover {
 }
 
 /* for react router setting of navlink to display differently when active */
-.active-nav {
+.activeNav {
   color: black;
   background-color: #faa549ff;
   border-radius: 15px;

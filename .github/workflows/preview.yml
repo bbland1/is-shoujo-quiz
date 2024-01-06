@@ -1,9 +1,9 @@
 name: GitHub Actions Vercel Preview Deployment
 on:
-  push:
-    branches:
-      - '*'
-      - '!main'
+  # push:
+  #   branches:
+  #     - '*'
+  #     - '!main'
   pull_request_target:
     branches:
       - main
