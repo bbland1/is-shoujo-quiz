@@ -72,17 +72,7 @@ function Links() {
         <div>
           <h2>Other links</h2>
           <p>
-            All the synopsis for the manga used in the quiz were taken from with
-            <a href="https://myanimelist.net" target="_blank" rel="noopener noreferrer" data-testid="MAL-Link">
-              My Anime List
-            </a>
-            or
-            <a href="https://anilist.co/" target="_blank" rel="noopener noreferrer" data-testid="Anilist-Link">
-              Anilist
-            </a>
-            . Below are some interesting reads that were linked in the
-            <span>What Is Shoujo?</span>
-            video above.
+            All the synopsis for the manga used in the quiz were taken from with <a href="https://myanimelist.net" target="_blank" rel="noopener noreferrer" data-testid="MAL-Link">My Anime List</a> or <a href="https://anilist.co/" target="_blank" rel="noopener noreferrer" data-testid="Anilist-Link">Anilist</a>. Below are some interesting reads that were linked in the <span>What Is Shoujo?</span> video above.
           </p>
           <ul>
             <li>
