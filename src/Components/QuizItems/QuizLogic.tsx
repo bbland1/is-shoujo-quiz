@@ -4,9 +4,9 @@ import './quiz.css';
 
 function QuizLogic() {
   // State Properties of the quiz
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showFinalScore, setShowFinalScore] = useState(false);
-  const [score, setScore] = useState(0);
+  const [ currentQuestion, setCurrentQuestion ] = useState(0);
+  const [ showFinalScore, setShowFinalScore ] = useState(false);
+  const [ score, setScore ] = useState(0);
 
   // giving functionality
 
@@ -15,7 +15,7 @@ function QuizLogic() {
     // check if the users clicked answer returns true (the correct answer)
     if (isCorrect) {
       // adds the value of the question to the current state of the score
-      setScore(score + questions[currentQuestion].questionValue);
+      setScore(score + questions[ currentQuestion ].questionValue);
     }
 
     // determines the position of the next question in the array adding 1 to the idex of the current question
@@ -77,8 +77,7 @@ function QuizLogic() {
         <div className="question-card func-button final-score">
           <h2>{finalScoreWords}</h2>
           <h3>
-            You got a {scorePercentage}
-            %!
+            You got a {scorePercentage}%!
           </h3>
           <h3>
             {score} out of {questions.length} correct
@@ -101,24 +100,22 @@ function QuizLogic() {
             </h3>
           )}
           <h4>
-            Question
-            {currentQuestion + 1} of
-            {questions.length}
+            Question {currentQuestion + 1} of {questions.length}
           </h4>
           <div className="question-info">
-            <h2 className="question-text">{questions[currentQuestion].questionText}</h2>
-            {questions[currentQuestion].question_img !== null && (
-              <img src={questions[currentQuestion].question_img} alt="" className="question-img" />
+            <h2 className="question-text">{questions[ currentQuestion ].questionText}</h2>
+            {questions[ currentQuestion ].question_img !== null && (
+              <img src={questions[ currentQuestion ].question_img} alt="" className="question-img" />
             )}
-            {questions[currentQuestion].question_description !== null && (
+            {questions[ currentQuestion ].question_description !== null && (
               <p className="synopsis">
-                <em>{questions[currentQuestion].question_description}</em>
+                <em>{questions[ currentQuestion ].question_description}</em>
               </p>
             )}
           </div>
           <div className="answer-text">
             <ul>
-              {questions[currentQuestion].answersOptions.map((answerOption) => (
+              {questions[ currentQuestion ].answersOptions.map((answerOption) => (
                 <button type="button" key={answerOption.id} onClick={() => handleAnswerClick(answerOption.isCorrect)}>
                   {answerOption.answerText}
                 </button>
