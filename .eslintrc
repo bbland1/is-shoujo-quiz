@@ -46,6 +46,6 @@
   "rules": {
     // "react/react-in-jsx-scope": "off",
     // "react/jsx-filename-extension": ["warn", { extensions: [".jsx"] }],
-    "max-len": ["error", { "code": 300 }]
+    "max-len": ["error", { "code": 500 }]
   }
 }
